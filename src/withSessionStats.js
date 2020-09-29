@@ -19,3 +19,4 @@ const withSessionStats = (Component) => (
 );
 
 export default withSessionStats;
+
