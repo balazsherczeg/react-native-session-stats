@@ -17,7 +17,6 @@
   "bugs": {
     "url": "https://github.com/balazsherczeg/react-native-session-stats/issues"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "homepage": "https://github.com/balazsherczeg/react-native-session-stats#readme",
   "devDependencies": {
     "@react-native-community/async-storage": "^1.12.0",
