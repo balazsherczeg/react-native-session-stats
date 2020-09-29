@@ -1,0 +1,25 @@
+{
+  "name": "react-native-session-stats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balazsherczeg/react-native-session-stats.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/balazsherczeg/react-native-session-stats/issues"
+  },
+  "homepage": "https://github.com/balazsherczeg/react-native-session-stats#readme",
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-native": "^0.63.2"
+  }
+}
