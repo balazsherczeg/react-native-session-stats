@@ -1,5 +1,5 @@
-import {createContext} from 'react';
+import { createContext } from 'react';
 
-const SessionStatsContext = createContext();
+const sessionStatsContext = createContext();
 
-export default SessionStatsContext;
+export default sessionStatsContext;

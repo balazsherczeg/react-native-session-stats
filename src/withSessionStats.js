@@ -3,7 +3,7 @@ import SessionStatsContext from './context';
 
 const withSessionStats = (Component) => (
   ({
-    forwardedRef,
+    forwardedRef, // eslint-disable-line
     ...rest
   }) => (
     <SessionStatsContext.Consumer>

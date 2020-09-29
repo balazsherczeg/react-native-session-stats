@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {node, func} from 'prop-types';
-import {AsyncStorage, AppState} from 'react-native';
+import {AppState} from 'react-native';
 import SessionStatsContext from './context';
 import {STORAGE} from './constants';
 
@@ -95,12 +95,13 @@ export default class SessionStats extends Component {
 }
 
 SessionStats.defaultProps = {
+  children: null,
   onSessionEnd: () => true,
   onSessionStart: () => true,
 };
 
 SessionStats.propTypes = {
-  children: node.isRequired,
+  children: node,
   onSessionEnd: func,
   onSessionStart: func,
 };
