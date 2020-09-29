@@ -1,7 +1,7 @@
 import React from 'react';
 import SessionStatsContext from './context';
 
-export const withSessionStats = (Component) => (
+const withSessionStats = (Component) => (
   ({
     forwardedRef,
     ...rest
@@ -17,3 +17,5 @@ export const withSessionStats = (Component) => (
     </SessionStatsContext.Consumer>
   )
 );
+
+export default withSessionStats;

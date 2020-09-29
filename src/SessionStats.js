@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import {node, func} from 'prop-types';
-import {AppState, AsyncStorage} from 'react-native';
+import {AsyncStorage, AppState} from 'react-native';
 import SessionStatsContext from './context';
 import {STORAGE} from './constants';
 
 const getNow = () => Math.round(Date.now() / 1000);
 const isOn = (appState) => appState === 'active';
 const isOff = (appState) => appState.match(/inactive|background/);
+
+console.log("appstate", AppState);
 
 export default class SessionStats extends Component {
   state = {
@@ -24,6 +26,7 @@ export default class SessionStats extends Component {
   componentDidMount() {
     this.appState = AppState.currentState;
     this.handleSessionStart();
+    console.log("heotns")
     AppState.addEventListener('change', this.handleAppStateChange);
   }
 
@@ -76,16 +79,20 @@ export default class SessionStats extends Component {
   }
 
   handleAppStateChange = (nextAppState) => {
-    if (isOff(this.appState) && isOn(nextAppState)) {
-      this.handleSessionStart();
-    } else if (isOn(this.appState) && isOff(nextAppState)) {
-      this.handleSessionEnd();
-    }
+    console.log("handleAppStateChange");
 
-    this.appState = nextAppState;
+//     if (isOff(this.appState) && isOn(nextAppState)) {
+//       this.handleSessionStart();
+//     } else if (isOn(this.appState) && isOff(nextAppState)) {
+//       this.handleSessionEnd();
+//     }
+// 
+//     this.appState = nextAppState;
   }
 
   render() {
+    console.log("render", AppState.currentState);
+
     return (
       <SessionStatsContext.Provider value={this.state.session}>
         {this.props.children}

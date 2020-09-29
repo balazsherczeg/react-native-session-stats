@@ -1,1 +1,1 @@
-export const STORAGE = 'react-native-session-stats';
+export const STORAGE = 'react_native_session_stats';
