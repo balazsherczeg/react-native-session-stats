@@ -3,16 +3,17 @@
   "version": "1.0.0",
   "description": "Log the time the user spends using your React Native app, and schedule actions accordingly.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/balazsherczeg/react-native-session-stats.git"
   },
-  "keywords": ["React Native", "Time spent", "Scheduled actions"],
+  "keywords": [
+    "React Native",
+    "Time spent",
+    "Scheduled actions"
+  ],
   "author": "Balázs Herczeg",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/balazsherczeg/react-native-session-stats/issues"
   },

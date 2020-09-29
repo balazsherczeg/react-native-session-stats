@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {node, func} from 'prop-types';
 import {AppState} from 'react-native';
+
 import SessionStatsContext from './context';
 import {STORAGE} from './constants';
 
