@@ -8,8 +8,6 @@ const getNow = () => Math.round(Date.now() / 1000);
 const isOn = (appState) => appState === 'active';
 const isOff = (appState) => appState.match(/inactive|background/);
 
-console.log("appstate", AppState);
-
 export default class SessionStats extends Component {
   state = {
     session: {
@@ -26,7 +24,6 @@ export default class SessionStats extends Component {
   componentDidMount() {
     this.appState = AppState.currentState;
     this.handleSessionStart();
-    console.log("heotns")
     AppState.addEventListener('change', this.handleAppStateChange);
   }
 
@@ -79,20 +76,16 @@ export default class SessionStats extends Component {
   }
 
   handleAppStateChange = (nextAppState) => {
-    console.log("handleAppStateChange");
+    if (isOff(this.appState) && isOn(nextAppState)) {
+      this.handleSessionStart();
+    } else if (isOn(this.appState) && isOff(nextAppState)) {
+      this.handleSessionEnd();
+    }
 
-//     if (isOff(this.appState) && isOn(nextAppState)) {
-//       this.handleSessionStart();
-//     } else if (isOn(this.appState) && isOff(nextAppState)) {
-//       this.handleSessionEnd();
-//     }
-// 
-//     this.appState = nextAppState;
+    this.appState = nextAppState;
   }
 
   render() {
-    console.log("render", AppState.currentState);
-
     return (
       <SessionStatsContext.Provider value={this.state.session}>
         {this.props.children}
